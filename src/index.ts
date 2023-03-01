@@ -39,23 +39,32 @@ const request = {
       expression: '',//計算式
       hideExpression: false//計算式を表示しない
     },
-    // 'field3': {
-    //   type: 'DROP_DOWN',
-    //   code: 'field3',
-    //   label: 'Field 3',
-    //   options: [
-    //     "a", "b", "c"
-    //   ],
-    // },
-
-		//他にも必要なフィールドをここに書く
+	"ドロップダウン": {
+		"type": "DROP_DOWN",
+		"code": "ドロップダウン",
+		"label": "ドロップダウン",
+		"noLabel": false,
+		"required": false,
+		"options": {
+			"sample1": {
+				"label": "sample1",
+				"index": "0"
+			},
+			"sample2": {
+				"label": "sample2",
+				"index": "1"
+			}
+		},
+		"defaultValue": ""
+	},
+	//他にも必要なフィールドをここに書く
   },
 };
 
 client.app.addFormFields(request)
   .then((response: any) => {
-    console.log(response);
+    console.log('ok:', response);
   })
   .catch((err: any) => {
-    console.log(err);
+    console.log('エラー：', err);
   });
